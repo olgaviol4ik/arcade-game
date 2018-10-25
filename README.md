@@ -1,11 +1,11 @@
-#Arcade-game project
-_________________________________________________________________________________________-
+# Arcade-game project
 
-##Instructions
+
+## Instructions
 For play game suppose to download repository and launch file index.html. Game compatibility with Chrome and Mozila firefox browser.
 For move player use ⬅️, ➡️, ⬇️, ⬆️ keys on keyboard.
 
-##Rules
+## Rules
 Player have to reach water on top by avoiding bugs.
 
 ##Working code
@@ -15,7 +15,7 @@ images - its has images for game.
 css - for style.css file.
 js - for app.js engine.js resources.js file.
 
-##Task Description was:
+## Task Description was:
 The css folder contains a style.css file which you do not need to edit
 The images folder contains the png image files, which are used when displaying the game. The images for the player and enemy character are going to be loaded from this folder.
 The js folder also contains the app engine needed to run the game and a resources.js file. You do not need to edit these files.
@@ -56,8 +56,6 @@ Code use module pattern.
 Main code locate in engine.js. Code in this file start animation, get images from resources.js file, contains collision (between player and enemies) and win algoritms.
 
 Code locate in app.js define classes and objects (enemies, player etc.). Code in resources.js load images to cash and return for code in engine.js.
-
-
 
 
 frontend-nanodegree-arcade-game
