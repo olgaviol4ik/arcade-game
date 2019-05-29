@@ -1,5 +1,3 @@
-
-
 // Enemies our player must avoid
 class Enemy {               //creating class Enemy
     // instantiating object of class Enemy and passing parameters x, y to it
