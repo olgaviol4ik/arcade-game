@@ -1,28 +1,24 @@
-// Enemies our player must avoid
-// Variables applied to each of our instances go here,
-// The image/sprite for our enemies, this uses
-// a helper we've provided to easily load images
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
-// You should multiply any movement by the dt parameter
-// which will ensure the game runs at the same speed for
-// all computers.
-// Draw the enemy on the screen, required method for game
-let debug = false;
-let game = true;
 
-class Enemy {
-    constructor(x, y) {
-        this.sprite = 'images/enemy-bug.png';
-        this.x = x;
+
+// Enemies our player must avoid
+class Enemy {               //creating class Enemy
+    // instantiating object of class Enemy and passing parameters x, y to it
+    constructor(x, y) {    //placing all enemies to array object
+        // Variables applied to each of our instances go here,
+        // this.sprite is provided to get started
+        this.sprite = 'images/enemy-bug.png';// The image/sprite for our enemies, this uses a helper provided to easily load images
+        this.x = x;         //defining all the parameters
         this.y = y;
         this.height = 65;
         this.width = 95
         this.collision = false;
-    };
-    update(dt){
+    };  
+    // Parameter: dt, a time delta between ticks
+    update(dt){    // Update the enemy's position, required method for game 
+        // You should multiply any movement by the dt parameter which will ensure the game runs at the same speed for all computers.
+        //this function is about finding random number 
         if (this.x > ctx.canvas.width + this.width) {
-            this.x = -200 * Math.floor(Math.random() * 4) + 1; //random number
+            this.x = -200 * Math.floor(Math.random() * 4) + 1; 
         } else {
             this.x += 150 * dt;
         }
@@ -38,7 +34,7 @@ class Enemy {
             this.collision = false;
         }
     }
-    render(){
+    render(){       // Draw the enemy on the screen, required method for game
         ctx.drawImage(Resources.get(this.sprite), this.x,this.y)
     }
 };
@@ -63,6 +59,10 @@ class Player {
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
+// The handleInput method, which should receive user input, allowedKeys (the key which was pressed) and move the player according to that input. In particular:
+//Left key should move the player to the left, right key to the right, up should move the player up and down should move the player down
+//Recall that the player cannot move off screen (so you will need to check for that and handle appropriately)
+//If the player reaches the water the game should be reset by moving the player back to the initial location (you can write a separate reset Player method to handle that)
     handleInput(direction) {
         // action events pressed keyboards keys
         const horizontal = 101,
@@ -81,8 +81,7 @@ class Player {
 
 };
 
-// This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
+// This event listener was provided and it listens for key presses to send the keys to player.handleInput() method.
 document.addEventListener('keyup', function (e) {
     var allowedKeys = {
         37: 'left',
@@ -106,10 +105,10 @@ let allEnemies = enemyPosition.map((y, index) => {
 });
 
 function won() {
-    reset();
+    reset(); //calling on method to return player to the initial position after he won
     console.log('won!');
 }
-function reset() {
+function reset() {      // moves player to the initial location
     allEnemies = [];
 }
 
