@@ -90,8 +90,7 @@ document.addEventListener('keyup', function (e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
-
-// Now instantiate your objects.
+// declaring enemyPosition
 const enemyPosition = [55, 140, 230];
 
 // Place the player object in a variable called player
