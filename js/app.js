@@ -48,7 +48,7 @@ class Player {
         this.width = 65;
     }
     update(dt) {
-        if (game && player.y < 40) {
+        if (game && this.y < 40) {
             game = false;
             won();
         }
